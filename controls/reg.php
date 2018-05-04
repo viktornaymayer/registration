@@ -11,8 +11,6 @@
         $birthday = normalize($_POST["birthday"]);
         $email = normalize($_POST["email"]);
 
-        echo $login."<br>".$pass."<br>".$sex."<br>".$birthday."<br>".$email;
-
         //  Проверка заполнения всех полей
         if($login and $pass and $birthday and $email){
 
@@ -32,11 +30,14 @@
                         $mail_ph = get_hash($passh);
 
                         if (reg_user($login, $passh, $sex, $birthday, $email, $mail_ph)){
-                            echo "<br><a href='../verify.php?verf=$mail_ph'>Подтвердить почту</a><br>";
+                            header("refresh: 5; url=http://registration/");
+                            echo    "<div style='text-align:center;padding:20px 50px;'>
+                                        Спасибо за регистрацию, $login!<br><br>
+                                        Мы направили Вам на почту письмо для подтверждения!
+                                    </div>";
                         }
                     }
-
-                    echo '<br><br>hello';}
+                }
             }
         }
         else{$mess = 1;}

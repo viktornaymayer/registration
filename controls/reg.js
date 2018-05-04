@@ -178,8 +178,3 @@ $('input[name="email"]').change(function() {
         fieldAnswer('email',0,'Пожалуйста, введите корректный email');
     }
 });
-
-
-
-
-

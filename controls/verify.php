@@ -3,6 +3,8 @@
     require('inc/config_inc.php');
     require('inc/lib_inc.php');
 
+    header("refresh: 5; url=http://registration/");
+
     $mail_ph = $_GET['verf'];
 
     if($mail_ph){
